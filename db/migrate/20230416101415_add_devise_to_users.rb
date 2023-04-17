@@ -32,6 +32,10 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      ## 名前を保存するカラム
+      t.string :name
+
+      t.text :introduction
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
@@ -42,9 +46,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end
-
-  ## 名前を保存するカラム
-   t.string :name
 
   def self.down
     # By default, we don't want to make any assumption about how to roll back a migration when your
