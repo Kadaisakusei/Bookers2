@@ -1,4 +1,6 @@
 <!-- ユーザーの詳細 -->
+<% @user.each do |user| %>
+
 <h2>User info</h2>
   <% if @user.image.attached? %>
   <%= image_tag @user.image, size: "300x300" %>
@@ -9,5 +11,10 @@
   <tr>
    <td>name</td><td><%= @user.name %></td>
   </tr>
+
+  <tr>
+   <td>introduction</td><td><%= @user.introduction %></td>
+  </tr>
 </table>
-<p>introduction</p>
+
+<p><%= link_to "プロフィール編集", edit_user_path(user.id) %></p>
