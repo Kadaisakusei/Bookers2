@@ -1,23 +1,4 @@
-<!-- ユーザーの詳細 -->
-
-<h2>User info</h2>
-  <% if @user.profile_image.attached? %>
-  <%= image_tag @user.profile_image, size: "300x300" %>
-<% else %>
-  <%= image_tag 'no_image', size: "300x300" %>
-<% end %>
-
-<table class="table">
-  <tr>
-   <td>name</td><td><%= @user.name %></td>
-  </tr>
-
-  <tr>
-   <td>introduction</td><td><%= @user.introduction %></td>
-  </tr>
-</table>
-
-<p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
+<%= render 'show', user: @user, book: @book %>
 
 
 <h1>Books</h1>
