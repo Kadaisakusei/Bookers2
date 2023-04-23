@@ -16,4 +16,9 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
 
+  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :name, numericality: {greater_than: 1,less_than: 21}
+  validates :introducti, length: {maximum: 50}
+
 end
