@@ -32,6 +32,12 @@ class BooksController < ApplicationController
   def edit
   end
 
+  def destroy
+   book = Book.find(params[:id])  # データ（レコード）を1件取得
+   book.destroy  # データ（レコード）を削除
+    redirect_to books_path  # 投稿一覧画面へリダイレクト
+  end
+
   private
     def book_params
       params.require(:book).permit(:title, :body)
@@ -41,5 +47,7 @@ class BooksController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :introduction, :image)
     end
+
+
 
 end
