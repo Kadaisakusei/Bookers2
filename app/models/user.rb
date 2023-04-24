@@ -19,6 +19,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :name, numericality: {greater_than: 1,less_than: 21}
-  validates :introducti, length: {maximum: 50}
+  validates :introduction, length: {maximum: 50}
 
 end
