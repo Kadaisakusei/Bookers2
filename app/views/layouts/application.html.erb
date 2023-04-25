@@ -14,48 +14,45 @@
   <body>
     <header>
        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-         <%= link_to "Booker", root_path %>
+        <div class="container ">
+         <%= link_to "Bookers", root_path, class:'text-white' %>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class="nav-link text-light">
-              <%= link_to user_path(current_user.id) do %><i class="fas fa-home"></i>Home<% end %>
+              <%= link_to user_path(current_user.id), class:'text-white' do %><i class="fas fa-home"></i>Home<% end %>
               </li>
               <li class="nav-link text-light">
-                <%= link_to  users_path do %><i class="fas fa-users"></i>Users<% end %>
+                <%= link_to  users_path, class:'text-white' do %><i class="fas fa-users"></i>Users<% end %>
               </li>
               <li class="nav-link text-light">
-                <%= link_to  books_path do %><i class="fas fa-book-open"></i>Books<% end %>
+                <%= link_to books_path, class:'text-white' do %><i class="fas fa-book-open"></i>Books<% end %>
               </li>
               <li class="nav-link text-light">
-                <%= link_to destroy_user_session_path, method: :delete do %><i class="fas fa-sign-out-alt"></i>Log out<% end %>
+                <%= link_to destroy_user_session_path, method: :delete, class:'text-white' do %><i class="fas fa-sign-out-alt"></i>Log out<% end %>
               </li>
             <% else %>
               <li class="nav-link text-light">
-                <%= link_to root_path do %><i class="fas fa-home"></i>Home<% end %>
+                <%= link_to root_path, class:'text-white' do %><i class="fas fa-home"></i>Home<% end %>
               </li>
               <li class="nav-link text-light">
-                <%= link_to home_about_path do %><i class="fas fa-link"></i>About<% end %>
+                <%= link_to home_about_path, class:'text-white' do %><i class="fas fa-link"></i>About<% end %>
               </li>
               <li class="nav-link text-light">
-                <%= link_to new_user_registration_path do %><i class="fas fa-user-plus"></i>Sign up<% end %>
+                <%= link_to new_user_registration_path, class:'text-white' do %><i class="fas fa-user-plus"></i>Sign up<% end %>
               </li>
               <li class="nav-link text-light">
-                <%= link_to new_user_session_path do %><i class="fas fa-sign-in-alt"></i>Log in<% end %>
+                <%= link_to new_user_session_path, class:'text-white' do %><i class="fas fa-sign-in-alt"></i>Log in<% end %>
               </li>
             <% end %>
            </div>
           </nav>
-
-
+         </header>
+           <main>
             <%= flash[:notice] %>
-
-
-          <%= yield %>
-
+            <%= yield %>
+          </main>
          </ul>
       </div>
-    </header>
   </body>
 </html>
