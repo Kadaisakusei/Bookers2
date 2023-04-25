@@ -52,10 +52,12 @@
 
     <tr>
       <td>
-        <% if @user.profile_image.attached? %>
-        <%= image_tag @user.profile_image, size: "100x100" %>
-        <% else %>
-        <%= image_tag 'no_image', size: "100x100" %>
+        <%= link_to user_path(book.user.id) do %>
+          <% if book.user.profile_image.attached? %>
+          <%= image_tag book.user.profile_image, size: "100x100" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "100x100" %>
+          <% end %>
         <% end %>
       </td>
       <td>
