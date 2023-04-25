@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
 def application
-  @user = User.find(params[:id])
+
 end
 
   protected
